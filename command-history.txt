@@ -1,0 +1,13 @@
+echo $USER
+echo $SHELL
+echo $LOGNAME
+exit
+docker exec -it cont_run-env bash
+docker ps -a
+docker run -itd --name cont_run-env img_run-env
+docker images
+docker build -t img_run-env .
+docker build -t img_from .
+docker container run -itd --name web-server-nginx -p 8080:80 nginx:latest
+docker image pull nginx:latest
+docker run hello-world
