@@ -11,3 +11,17 @@ docker build -t img_from .
 docker container run -itd --name web-server-nginx -p 8080:80 nginx:latest
 docker image pull nginx:latest
 docker run hello-world
+docker run -itd --rm --name cont_expose -p 8080:80 img_expose
+docker search python:3.6
+docker search registry
+docker search --filter "is-official=true" registry
+docker search --format "table {{.Name}}\t{{.Description}}\t{{.IsOfficial}}" registry
+docker image ls
+docker image
+docker images ubuntu
+docker images --no-trunc ubuntu:16.04
+docker image pull nginx:alpine
+docker image pull --all-tags nginx
+docker login
+docker tag nginx:latest lai225joseph/repo-nginx:cc-nginx
+docker image push lai225joseph/repo-nginx:cc-nginx
