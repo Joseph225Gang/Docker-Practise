@@ -25,3 +25,12 @@ docker image pull --all-tags nginx
 docker login
 docker tag nginx:latest lai225joseph/repo-nginx:cc-nginx
 docker image push lai225joseph/repo-nginx:cc-nginx
+docker images nginx
+docker images nginx:latest
+docker image inspect nginx:latest
+docker image inspect --format "{{.RepoTags}} : {{.RepoDigests}} " nginx:latest
+docker image inspect --format "{{json .Config}} " nginx > nginx_report.txt
+docker image history nginx
+docker image rm nginx:1.10-alpine
+docker image rmi c31594b18e35
+docker image rmi f94d6dd9b576 --force
